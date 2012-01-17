@@ -24,4 +24,4 @@ SASS. You should have this installed and know how to use it.
 http://sass-lang.com
 
 Command-line access - so you can watch your entire SASS folder with the super-awesome command
-sass -w .:..
+sass -w .:.. (or something similar)
