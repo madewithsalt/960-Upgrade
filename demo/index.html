@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="no-js iexpl ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js iexpl ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js iexpl ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="no-js iexpl ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <link href="static/main.css" rel="stylesheet" type="text/css" />
+    <script src="static/jquery.min.js"></script>
+    <script type="text/javascript">
+
+		$(document).ready(function(){
+			var output = $(window).width();
+			$('#docWidth').html('Document Width: '+ output + 'px');
+
+			$(window).resize(function(){
+				output = $(window).width();
+				$('#docWidth').html('Document Width: ' + output + 'px');
+			});
+
+		});
+	</script>
+</head>
+<body>
+<h2>12 column grid</h2>
+	<div class="container_12">
+		<h3 id="docWidth"></h3>
+	</div>
+	<div class="marker container_12">
+		<div class="grid_1"> grid 1</div>
+		<div class="grid_11"> grid 11</div>
+
+		<div class="grid_2"> grid 2</div>
+		<div class="grid_10"> grid 10</div>
+
+		<div class="grid_3"> grid 3</div>
+		<div class="grid_9"> grid 9</div>
+
+		<div class="grid_4"> grid 4</div>
+		<div class="grid_8"> grid 8</div>
+
+		<div class="grid_5"> grid 5</div>
+		<div class="grid_7"> grid 7</div>
+
+		<div class="grid_6"> grid 6</div>
+		<div class="grid_6"> grid 6</div>
+
+		<div class="grid_7"> grid 7</div>
+		<div class="grid_5"> grid 5</div>
+
+		<div class="grid_8"> grid 8</div>
+		<div class="grid_4"> grid 4</div>
+
+		<div class="grid_9"> grid 9</div>
+		<div class="grid_3"> grid 3</div>
+
+		<div class="grid_10"> grid 10</div>
+		<div class="grid_2"> grid 2</div>
+
+		<div class="grid_11"> grid 11</div>
+		<div class="grid_1"> grid 1</div>
+
+		<div class="grid_3 min768_half">grid 3 768 half</div>	
+
+		<div class="grid_12"> grid 12</div>
+
+		<div class="grid_11 prefix_1"> grid 11 prefix 1</div>
+		<div class="grid_10 prefix_2"> grid 10 prefix 2</div>
+		<div class="grid_9 prefix_3"> grid 9 prefix 3</div>
+		<div class="grid_8 prefix_4"> grid 8 prefix 4</div>
+		<div class="grid_7 prefix_5"> grid 7 prefix 5</div>
+		<div class="grid_6 prefix_6"> grid 6 prefix 6</div>
+		<div class="grid_5 prefix_7"> grid 5 prefix 7</div>
+		<div class="grid_4 prefix_8"> grid 4 prefix 8</div>
+		<div class="grid_3 prefix_9"> grid 3 prefix 9</div>
+		<div class="grid_2 prefix_10"> grid 2 prefix 10</div>
+		<div class="grid_1 prefix_11"> grid 1 prefix 11</div>
+	<div class="right">
+		<div class="grid_11 suffix_1"> grid 11 suffix 1</div>
+		<div class="grid_10 suffix_2"> grid 10 suffix 2</div>
+		<div class="grid_9 suffix_3"> grid 9 suffix 3</div>
+		<div class="grid_8 suffix_4"> grid 8 suffix 4</div>
+		<div class="grid_7 suffix_5"> grid 7 suffix 5</div>
+		<div class="grid_6 suffix_6"> grid 6 suffix 6</div>
+		<div class="grid_5 suffix_7"> grid 5 suffix 7</div>
+		<div class="grid_4 suffix_8"> grid 4 suffix 8</div>
+		<div class="grid_3 suffix_9"> grid 3 suffix 9</div>
+		<div class="grid_2 suffix_10"> grid 2 suffix 10</div>
+		<div class="grid_1 suffix_11"> grid 1 suffix 11</div>
+	</div>
+
+	</div>
+<h2>16 column grid</h2>
+	<div class="marker container_16">
+		<div class="grid_1">1</div>
+		<div class="grid_15"> grid 15</div>
+		<div class="grid_2"> grid 2</div>
+		<div class="grid_14"> grid 14</div>
+
+		<div class="grid_3"> grid 3</div>
+		<div class="grid_13"> grid 13</div>
+
+		<div class="grid_4"> grid 4</div>
+		<div class="grid_12"> grid 12</div>
+
+		<div class="grid_5"> grid 5</div>
+		<div class="grid_11"> grid 11</div>
+
+		<div class="grid_6"> grid 6</div>
+		<div class="grid_10"> grid 10</div>
+
+		<div class="grid_7"> grid 7</div>
+		<div class="grid_9"> grid 9</div>
+
+		<div class="grid_8"> grid 8</div>
+		<div class="grid_8"> grid 8</div>
+
+		<div class="grid_9"> grid 9</div>
+		<div class="grid_7"> grid 7</div>
+
+		<div class="grid_10"> grid 10</div>
+		<div class="grid_6"> grid 6</div>
+
+		<div class="grid_11"> grid 11</div>
+		<div class="grid_5"> grid 5</div>
+
+		<div class="grid_12"> grid 12</div>
+		<div class="grid_4"> grid 4</div>
+
+		<div class="grid_13"> grid 13</div>
+		<div class="grid_3"> grid 3</div>
+
+		<div class="grid_14"> grid 14</div>
+		<div class="grid_2"> grid 2</div>
+
+		<div class="grid_15"> grid 15</div>
+		<div class="grid_1">1</div>
+
+		<div class="grid_16"> grid 16</div>
+
+
+		<div class="grid_4"> grid 4</div>
+		<div class="grid_4"> grid 4</div>
+		<div class="grid_4"> grid 4</div>
+		<div class="grid_4"> grid 4</div>
+
+		<div class="grid_3"> grid 3</div>
+		<div class="grid_5"> grid 5</div>
+		<div class="grid_4"> grid 4</div>
+		<div class="grid_3 min768_half min480_full"> grid 2: 760 half, 480 full</div>
+		<div class="grid_2 min768_half"> grid 2: 760 half</div>
+
+	</div>
+</body>
+</html>

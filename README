@@ -1,0 +1,27 @@
+=======================================
+960 Upgrade is created by: Kristi Bonner
+http://kristi.theresnobox.net
+
+Based off of the work by Ethan Marcoette and his Responsive Design
+And the popular 960 grid by Nathan Smith: http://960.gs/
+
+The file structure of this framework is based off of the excellent work by Jonathan Snook and his book,
+Scalable and Modular Architecture for CSS: http://smacss.com/
+
+
+=======================================
+The goal of this framework is to:
+
+1. Leverage the clean organized awesomeness of SASS
+2. Build on top of a framework most people already know
+3. Assist in taking an existing 960-designed site and 'upgrading' it to a responsive design.
+
+
+=======================================
+REQUIREMENTS:
+
+SASS. You should have this installed and know how to use it.
+http://sass-lang.com
+
+Command-line access - so you can watch your entire SASS folder with the super-awesome command
+sass -w .:..

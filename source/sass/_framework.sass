@@ -1,0 +1,118 @@
+// Framework SASS File for structural elements and common tags. This is the meat and potatoes of the site. 
+// REQUIRED: colors.sass file must be included before this file. 
+
+/** TABLE OF CONTENTS
+ *
+ * 1. Variables
+ *    1a. Mixins
+ * 2. 960 grid extensions
+ *
+ */
+ 
+ 
+// ** Variables **/
+
+
+// ** Mixins **/
+
+// Mixin: opacitySetting
+// Use a decimal value for this call. (ie 0.5)
+// Example:
+// @include opacitySetting(0.5)
+
+@mixin opacitySetting($opacityValue)
+  $opacityAlternate: $opacityValue * 100
+  /* normal */
+  opacity: $opacityValue
+  /* mozilla/netscape */
+  -moz-opacity: $opacityValue
+  /* IE 8 */
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=#{$opacityAlternate})"
+  /* IE 5-7 */
+  filter: alpha(opacity="#{$opacityAlternate}")
+  /* Safari 1.x */
+  -khtml-opacity: $opacityValue
+
+// Mixin: shadowSetting
+// Used for shadows, the last value $isInset, expects a true or false value.
+// A VALUE IS EXPECTED FOR ALL PARAMETERS.
+// 
+// IE version of the shadow: For now it is a generic direction and strength - picks up colors
+// from the passed value, a to do: calculate an aproximation for the values based on hShadow/vShadow and blur (or spread)
+
+@mixin shadowSetting($hShadow, $vShadow, $blur, $spread, $color, $isInset)
+  @if $isInset == true
+    -moz-box-shadow: $hShadow $vShadow $blur $spread $color inset
+    -webkit-box-shadow: $hShadow $vShadow $blur $spread $color inset
+    box-shadow: $hShadow $vShadow $blur $spread $color inset  
+    filter: progid:DXImageTransform.Microsoft.Shadow(color="#{$color}", Direction=145, Strength=3)
+    
+  @else if $isInset == false
+    -moz-box-shadow: $hShadow $vShadow $blur $spread $color 
+    -webkit-box-shadow: $hShadow $vShadow $blur $spread $color 
+    box-shadow: $hShadow $vShadow $blur $spread $color   
+    filter: progid:DXImageTransform.Microsoft.Shadow(color="#{$color}", Direction=145, Strength=3)
+
+// Mixin: roundedCorners
+// Rounds all four corners
+// Pass in an integer value for corner radius, in pixels (e.g. "5px")
+// Example:
+// @include roundedCorners(5px)
+
+@mixin roundedCorners($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+// Mixin: roundedCorner
+// Rounds a single corner
+// $level accepts the following: "top", "bottom"
+// $side accepts the following: "left", "right"
+// Example:
+// @include roundedCorner("top", "left", 5px)
+
+@mixin roundedCorner($level, $side, $radius)
+  -webkit-border-#{$level}-#{$side}-radius: $radius
+  -webkit-border-#{$level}-#{$side}-radius: $radius
+  -moz-border-radius-#{$level}#{$side}: $radius
+  -moz-border-radius-#{$level}#{$side}: $radius
+  border-#{$level}-#{$side}-radius: $radius
+  border-#{$level}-#{$side}-radius: $radius
+
+
+/** 960 grid extensions **/
+
+  
+/** Global **/
+.grid_3 img
+  width: 100%
+
+.container_12 div, .container_16 div
+  @include roundedCorners(5px)
+  background-color: $MidGrey
+  color: $VeryDarkGrey
+  min-height: 30px
+  margin-bottom: 20px
+
+.container_12
+  background: url(../960_grid_12_col.jpg) -30px 0 repeat-y
+  
+.container_16
+  background: url(../960_grid_16_col.jpg) -30px 0 repeat-y
+
+.right 
+  text-align: right
+
+.marker
+  border: 1px solid red
+
+@media screen and (min-width: 320px)
+
+@media screen and (min-width: 480px)
+
+@media screen and (min-width: 768px)
+
+@media screen and (min-width: 900px)
+
+
+
