@@ -1,0 +1,6 @@
+Version 0.01 - Initial Commit of Project
+
+GOALS:
+- Focus is on the 12 column grid to start.
+- Create as little repetitive styles as possible between the 4 benchmarks
+- Create example modules and states in the demo folder. A lean mini-site, but still pretty naked.
