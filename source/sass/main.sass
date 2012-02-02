@@ -13,13 +13,22 @@
 // Leveraging the power of SASS to keep your site's colors in one neat and tidy place.  
 @import 'colors'
 
-/* framework styles */
-// (AKA, base and layout rules) - if you have a very large project you might separate these into 2 files. 
+/* framework styles - structural elements */
+//** WHAT GOES IN FRAMEWORK? **/
+// 1. Without it, the site would fall apart (header, footer, main content)
+// 2. Cannot in any way be moved from it's current location.
+// 3. "Master" Styles, like h1-h5, a, p, ul, etc...
 @import 'framework'
 
-/* module styles. */
+/* modules */
+//** WHAT GOES IN MODULES? **/
+// If it:
+// 1. Can be moved from it's parent container without breaking the site horrificly
+// 2. Can potentially be re-used in any way, shape, or form.
+// This should be a pretty big file compared to Framework.
 // A Module is a more discrete component of the page. It is your navigation bars and your carousels and your dialogs and your widgets and so on. This is the meat of the page. Modules sit inside Layout components.   */
 @import 'modules'
+
 
 // Where is the 'states' file? Well, I believe that with SASS we can use the selector nesting to achieve this, and keep the related states to a module together in the same file. Anything that's considered a 'generic state' can than be considered just another module style type. 
 
