@@ -30,7 +30,7 @@ sass -w .:.. (or something similar)
 There's also a bash script set up inside the sass folder which you can run to watch your sass files. This assumes you're saving them to a css folder on the same level as your sass folder. 
 
 OPTIONAL:
- * Compass. A super handy SASS-based framework. Instructions on how to configure Compass with this framework in the git wiki.
+ * Compass. A super handy SASS-based framework. Instructions on how to configure Compass with this framework in the git wiki. http://compass-style.org/
 
 
 
