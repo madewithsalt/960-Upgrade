@@ -13,6 +13,9 @@
 // Leveraging the power of SASS to keep your site's colors in one neat and tidy place.  
 @import 'colors'
 
+/* Mixins */
+@import 'mixins'
+
 /* framework styles */
 // (AKA, base and layout rules) - if you have a very large project you might separate these into 2 files. 
 @import 'framework'
@@ -22,5 +25,9 @@
 @import 'modules'
 
 // Where is the 'states' file? Well, I believe that with SASS we can use the selector nesting to achieve this, and keep the related states to a module together in the same file. Anything that's considered a 'generic state' can than be considered just another module style type. 
+
+/* print stylesheet */
+@media print
+  @import 'print'
 
 
