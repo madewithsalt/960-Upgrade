@@ -20,8 +20,17 @@ The goal of this framework is to:
 =======================================
 REQUIREMENTS:
 
-SASS. You should have this installed and know how to use it.
+* SASS. You should have this installed and know how to use it.
 http://sass-lang.com
 
-Command-line access - so you can watch your entire SASS folder with the super-awesome command
+Command-line access - so you can watch your entire SASS folder with the super-awesome command:
+
 sass -w .:.. (or something similar)
+
+There's also a bash script set up inside the sass folder which you can run to watch your sass files. This assumes you're saving them to a css folder on the same level as your sass folder. 
+
+OPTIONAL:
+ * Compass. A super handy SASS-based framework. Instructions on how to configure Compass with this framework in the git wiki.
+
+
+
