@@ -87,11 +87,6 @@
     .grid_16
       width: 97.9166667% /* 960 - 2.08333333 */
 
-  .min_320
-    &.full
-      width: 97.9166667% /* 960 - 2.08333333 */
-    &.half
-      width: 47.9166667% /* 480 / 960 - 2.08333333 */
 
 @media screen and (min-width: 480px)
   .container_12, .container_16
@@ -122,11 +117,7 @@
     .grid_12, .grid_13, .grid_14, .grid_15
       width: 72.9166667% /* 720 / 960 - 2.08333333 */
   
-  .container_12, .container_16
-    .min480_full
-      width: 97.9166667% /* 960 - 2.08333333 */
-    .min480_half
-      width: 47.9166667% /* 480 / 960 - 2.08333333 */
+
 
 @media screen and (min-width: 768px)
   .container_12, .container_16
@@ -297,13 +288,6 @@
     .suffix_15
       padding-right: 93.75% /* 900 */
 
-  .container_12, .container_16
-    .min768_full
-      width: 97.9166667% 
-    .min768_half
-      width: 47.9166667% 
-    .min768_quarter
-      width: 22.9166667%
 
 @media screen and (min-width: 959px)
   // at > 960 we go back to the traditional pixel-based size, to be used as a baseline for existing layouts. 
@@ -594,3 +578,40 @@
       left: -840px
     .pull_15
       left: -900px
+
+/* Half, Quarter, and Full Overrides */
+
+@media screen and (min-width: 320px)
+  .container_12, .container_16
+    .min320_full
+      width: 97.9166667% /* 960 - 2.08333333 */
+    .min320_half
+      width: 47.9166667% /* 480 / 960 - 2.08333333 */
+    .min320_quarter
+      width: 22.9166667%
+@media screen and (min-width: 480px)
+  .container_12, .container_16
+    .min480_full
+      width: 97.9166667% /* 960 - 2.08333333 */
+    .min480_half
+      width: 47.9166667% /* 480 / 960 - 2.08333333 */
+    .min480_quarter
+      width: 22.9166667%
+      
+@media screen and (min-width: 768px)
+  .container_12, .container_16
+    .min768_full
+      width: 97.9166667% 
+    .min768_half
+      width: 47.9166667% 
+    .min768_quarter
+      width: 22.9166667%
+
+@media screen and (min-width: 900px)
+  .container_12, .container_16
+    .min900_full
+      width: 97.9166667% 
+    .min900_half
+      width: 47.9166667% 
+    .min900_quarter
+      width: 22.9166667%
