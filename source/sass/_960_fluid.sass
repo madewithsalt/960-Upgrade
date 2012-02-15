@@ -1,51 +1,92 @@
+/* Responsive Grid Mixins and Variables Credit: Twitter's Bootstrap */
+
+// Default 960px grid
+$gridColumns: 12 !default
+$gridColumnWidth: 80px !default
+$gridGutterWidth: 20px !default
+$gridRowWidth: $gridColumns * $gridColumnWidth + $gridGutterWidth * ($gridColumns - 1)
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+=clearfix
+  *zoom: 1
+  &:before,
+  &:after
+    display: table
+    content: ""
+  &:after
+    clear: both
+
+// Take these values and mixins, and make 'em do their thang
+=gridSystem-generate($gridColumns, $gridColumnWidth, $gridGutterWidth)
+  // Row surrounds the columns
+  .container_12
+    margin-left: $gridGutterWidth * -1
+    +clearfix
+  // Find all .span# classes within .row and give them the necessary properties for grid columns (supported by all browsers back to IE7, thanks $dhg)
+  [class*="grid_"]
+    +gridSystem-gridColumn($gridGutterWidth)
+  // Default columns
+  .grid_1
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 1)
+  .grid_2
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 2)
+  .grid_3
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 3)
+  .grid_4
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 4)
+  .grid_5
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 5)
+  .grid_6
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 6)
+  .grid_7
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 7)
+  .grid_8
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 8)
+  .grid_9
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 9)
+  .grid_10
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 10)
+  .grid_11
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 11)
+  .grid_12,
+  .container
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 12)
+  // Offset column options
+  .push_1
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 1)
+  .push_2
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 2)
+  .push_3
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 3)
+  .push_4
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 4)
+  .push_5
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 5)
+  .push_6
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 6)
+  .push_7
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 7)
+  .push_8
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 8)
+  .push_9
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 9)
+  .push_10
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 10)
+  .push_11
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 11)
+
+// Hide from screenreaders and browsers
+// Credit: HTML5 Boilerplate
+.hidden
+  display: none
+  visibility: hidden
+
 /* clearfixes */
 
-.clear
-  clear: both
-  display: block
-  overflow: hidden
-  visibility: hidden
-  width: 0
-  height: 0
-
-.clearfix
-  &:before, &:after
-    content: '.'
-    display: block
-    overflow: hidden
-    visibility: hidden
-    font-size: 0
-    line-height: 0
-    width: 0
-    height: 0
-
-.container_12
-  &:before, &:after
-    content: '.'
-    display: block
-    overflow: hidden
-    visibility: hidden
-    font-size: 0
-    line-height: 0
-    width: 0
-    height: 0
-
-.container_16
-  &:before, &:after
-    content: '.'
-    display: block
-    overflow: hidden
-    visibility: hidden
-    font-size: 0
-    line-height: 0
-    width: 0
-    height: 0
-
-.clearfix:after, .container_12:after, .container_16:after
-  clear: both
-
-.clearfix, .container_12
-  zoom: 1
+.clear, .clearfix, .container_12
+  +clearfix
 
 
 @media screen and (min-width: 320px)

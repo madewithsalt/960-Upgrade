@@ -2,8 +2,12 @@
 960 Upgrade is created by: Kristi Bonner
 http://kristi.theresnobox.net
 
+This framework is pretty much a frankenstein of my favorite pieces of various grid systems and schools of thought.
+
 Based off of the work by Ethan Marcoette and his Responsive Design
 And the popular 960 grid by Nathan Smith: http://960.gs/
+
+But adapted the smart approach of Twitter's Bootstrap responsive grid, converted to SASS.
 
 The file structure of this framework is based off of the excellent work by Jonathan Snook and his book,
 Scalable and Modular Architecture for CSS: http://smacss.com/
@@ -16,6 +20,36 @@ The goal of this framework is to:
 2. Build on top of a framework most people already know
 3. Assist in taking an existing 960-designed site and 'upgrading' it to a responsive design.
 
+
+=======================================
+Changes to your 960 markup:
+
+The biggest change is the abolishment of clear divs, and the adoption of 'rows'.
+
+No more alpha and omega tagging for nested grids! No more stupid clearfix divs!
+
+Example:
+`<div class="container_12">
+	<div class="row">
+		<div class="grid_6">block 1><div class="grid_6">block 2</div>
+	</div>
+</div>
+`
+
+=======================================
+Override Mixins to force fluid widths:
+
+There's 3 override mixins available to change the default behavior of a grid cell when it reaches a certain width threshold. For example, all grids flip to 100% width below 480px wide. You can override this by adding this mixin to that div:
+`
+@media (max-width: 480px)
+	.grid_3
+		+override-half
+`
+
+Will produce:
+`.grid_3 { width: 50% }`
+
+When the browser has a width of less than 480px.
 
 =======================================
 REQUIREMENTS:

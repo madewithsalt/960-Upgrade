@@ -1,0 +1,153 @@
+/* Responsive Grid Mixins and Variables Credit: Twitter's Bootstrap */
+
+// Default 960px grid
+$gridColumns: 12 !default
+$gridColumnWidth: 60px !default
+$gridGutterWidth: 20px !default
+$gridRowWidth: $gridColumns * $gridColumnWidth + $gridGutterWidth * ($gridColumns - 1)
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+=clearfix
+  *zoom: 1
+  &:before,
+  &:after
+    display: table
+    content: ""
+  &:after
+    clear: both
+// GRID SYSTEM
+// --------------------------------------------------
+
+// Site container
+// -------------------------
+=container-fixed
+  width: $gridRowWidth
+  margin-left: auto
+  margin-right: auto
+  +clearfix
+
+// Le grid system
+// -------------------------
+=gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $columns)
+  width: $gridColumnWidth * $columns + $gridGutterWidth * ($columns - 1)
+
+=gridSystem-offset($gridColumnWidth, $gridGutterWidth, $columns)
+  margin-left: $gridColumnWidth * $columns + $gridGutterWidth * ($columns - 1) + $gridGutterWidth * 2
+
+=gridSystem-gridColumn($gridGutterWidth)
+  float: left
+  margin-left: $gridGutterWidth
+
+// Take these values and mixins, and make 'em do their thang
+=gridSystem-generate($gridColumns, $gridColumnWidth, $gridGutterWidth)
+  // Row surrounds the columns
+  .row
+    margin-left: $gridGutterWidth * -1
+    +clearfix
+  // Find all .span# classes within .row and give them the necessary properties for grid columns (supported by all browsers back to IE7, thanks $dhg)
+  [class*="grid_"]
+    +gridSystem-gridColumn($gridGutterWidth)
+  // Default columns
+  .grid_1
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 1)
+  .grid_2
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 2)
+  .grid_3
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 3)
+  .grid_4
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 4)
+  .grid_5
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 5)
+  .grid_6
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 6)
+  .grid_7
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 7)
+  .grid_8
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 8)
+  .grid_9
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 9)
+  .grid_10
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 10)
+  .grid_11
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 11)
+  .grid_12,
+  .container
+    +gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 12)
+  // Offset column options
+  .push_1
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 1)
+  .push_2
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 2)
+  .push_3
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 3)
+  .push_4
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 4)
+  .push_5
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 5)
+  .push_6
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 6)
+  .push_7
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 7)
+  .push_8
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 8)
+  .push_9
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 9)
+  .push_10
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 10)
+  .push_11
+    +gridSystem-offset($gridColumnWidth, $gridGutterWidth, 11)
+
+// Overrides for grid widths.
+=override-quarter
+  width: 25%
+=override-half
+  width: 50%
+=override-full
+  width: 100%
+
+
+// Hide from screenreaders and browsers
+// Credit: HTML5 Boilerplate
+.hidden
+  display: none
+  visibility: hidden
+
+/* clearfixes */
+
+.clear, .clearfix, .container_12
+  +clearfix
+
+
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px)
+
+
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+// --------------------------------------------------
+
+@media (max-width: 768px)
+  .container_12
+    width: auto
+    padding: 0 20px
+  
+// PORTRAIT TABLET TO DEFAULT DESKTOP
+// ----------------------------------
+
+@media (min-width: 768px) and (max-width: 959px)
+  // Fixed grid
+  +gridSystem-generate(12, 44px, 20px)
+
+  .container_12
+    width: 768px
+    margin: auto
+
+@media (min-width: 960px) 
+  // Container (centered, fixed-width layouts)
+  +gridSystem-generate(12, 60px, 20px)
+
+  .container_12
+    +container-fixed
